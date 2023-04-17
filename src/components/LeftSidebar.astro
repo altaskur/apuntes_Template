@@ -1,0 +1,8 @@
+---
+const posts = await Astro.glob('../pages/post/*.md');
+const categories = posts.map((post) =>post.frontmatter.tags);
+---
+
+<ul>
+    {categories.map((cat) => <li>{cat}</li>)}
+</ul>
